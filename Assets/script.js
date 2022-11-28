@@ -1,34 +1,52 @@
-var questions = [
+const startButton = document.getElementById('start-btn')
+const questionContainerElement = document.getElementById
+('question-container')
+const questionElement = document.getElementById('question')
+const answerButtonsElement = document.getElementById
+('answer-buttons')
+
+let shuffledQuestions, currentQuestionIndex
+
+startButton.addEventListener('click', startQuiz)
+
+function startQuiz() {
+     console.log('Started')
+     startButton.classList.add('hide') 
+     shuffledQuestions = questions.sort(()=> Math.random() - .5)
+        currentQuestionIndex = 0
+     questionContainerElement.classList.remove('hide')  
+     setNextQuestion()
+}
+
+function setNextQuestion() {
+ showQuestion(shuffledQuestions[currentQuestionIndex])
+}
+
+function selectAnswer(e) {
+}
+
+function showQuestion(question) {
+  questionElement.innerText = question.question
+  question.answers.array.forEach((answer => {
+     const button = document.createElement('button')
+     button.innerText = answer.text
+     button.classList.add('btn')
+     if(answer.correct){
+      button.dataset.correct = answer.correct
+     }
+     button.addEventListener('click', selectAnswer)
+     answerButtonsElement.appendChild(button)
+  }))
+}
+
+
+
+const questions = [
      {
-     prompt: "What fruit is Red and Round?\n(a) Banana\n\
-     (b) Apple\n(c) Orange\n(d) Grapes",
-     answer: "b"
-     },
-     {
-          prompt: "What Dessert cotains the most Sugar?\n(a) Peachcobbler\n\
-          (b) Ice Cream\n(c) Chocolate Cake\n(d) Cookies",
-          answer:"a"
-     },
-     {
-          prompt: "Which meat contains the hightest Protien intake?\n(a) Steak\n\
-          (b) Seafood\n(c) Chicken\n(d) Pork",
-          answer: "c"
-     },
-     {
-          prompt: "What is your favorite type of food?\n(a) All types !\n\
-          (b) You don't really care !\n(c) Oh My God, Im on like a Diet!\n(d) OHHH MY GODDD FOODDDD !!!"
-          answer: "d"
+          question: "What is 2 + 2 ?",
+          answers:[
+               {text:'4', correct: true },
+               {text: '8', correct: false}
+          ]
      }
 ]
-var score = 0
-
-for( var i=0; i< questions.length; i++){
-     var response =window.prompt(questions[i].prompt);
-     if( response == questions[i].answer){
-          score++;
-          alert("You Got It!!!");
-     } else {
-          alert("ANT Try Again");
-     }
-}
-alert("Congradulations you scored" + score + "/" questions.length);

@@ -45,12 +45,13 @@ body.wrong {
      margin: 20px 0;
 }
 
-.btn{
-     --hue: var(--hue-meutral);
-     border: 1px solid black ;
+.btn {
+     --hue: var(--hue-neutral);
+     border: 1px solid hsl(var(--hue), 100%, 30%);
      background-color: hsl(var(--hue), 100%, 50%);
      border-radius: 5px;
      padding: 5px 10px;
+     color:black;
      outline: none;
 }
 
@@ -60,6 +61,7 @@ body.wrong {
 
 .btn.correct {
      --hue: var(--hue-correct);
+     color: black;
 }
 
 .btn.wrong {
@@ -79,5 +81,5 @@ body.wrong {
 }
 
 .hide {
-     display: none;
+     display: none ;
 }

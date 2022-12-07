@@ -146,7 +146,7 @@
        .then(function(reponse){
         return response.json();    
        })
-       .then(function(data)){
+       .then(function(data) {
         $('#btn').click(function() {
           $('#options').show();
           adding_Questions(data.Questions,count);
@@ -179,7 +179,7 @@
             $(this).siblings().removeClass("active");
             answer[count] = $(this).html();
           })
-        }
+        })
 
 
 

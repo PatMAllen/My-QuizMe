@@ -1,0 +1,39 @@
+{
+     "Questions": [
+          {
+               "Quiz": "Q.1) What is the difference between a Chocolate Cake and Chocolate Pie?",
+               "option1": " The level of sugar in them ?",
+               "option2": " The chocolate used to make them ? ",
+               "option3": " The oven that cooks them ?",
+               "option4": " The bowl that makes them ?",
+               "answer": " The level of sugar in them !"
+          },
+          {
+               "Quiz": "Q.2) What is the real color of Salmon?",
+               "option1": " Gold ",
+               "option2": " Pink ",
+               "option3": " Phusha ",
+               "option4": " Saphirre ",
+               "answer": " Phusha "
+          },
+          {
+               "Quiz": "Q.3) What is a Skeletons Favorite Snack ?",
+               "option1": " Brains ",
+               "option2": " Skin ",
+               "option3": " Milk ",
+               "option4": " Ribbs ",
+               "answer": " Ribbs "                       
+          },
+          {
+               "Quiz": "Q.4) What do you call a Pig that knows Karate ?",
+               "option1": " Pig Soowwyyy ",
+               "option2": " Pork Chop ",
+               "option3": " Ninja Pork ",
+               "option4": " Nunchk Pork ",
+               "answer": " Pork Chop "
+          }
+     
+     
+     
+     ]
+}

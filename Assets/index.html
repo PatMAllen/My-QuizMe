@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="./styles.css" rel="stylesheet">
+  
     <title> My Food Quiz Me ! </title>
   </head>
   <body>
@@ -24,7 +25,7 @@
             <p> You will get 8 points for each correct answer,  At the end of the Quiz, 
                 your total score will be displayed. Maximum score is 32 points.
             </p>
-            <button class="btn btn-success d-flex mx-auto mt-4" id="btn"><h5>Start Quiz </h5></button>
+            <button class="btn btn-success d-flex mx-auto mt-4" id="btn"><h5> Start Quiz </h5></button>
           </div>
 
           <!--Quiz Page-->
@@ -130,15 +131,56 @@
         }
         $('#main').hide();
 
-        $("marks").text(marks):
+        $("marks").text(marks);
         $("#correct-answer").text(marks / 4 );
         $('correct-answer').text((marks / 32)* 100 + "%");
 
         $("#Result").show();
 
       }
+       $("#options").hide();
 
-       
+       // API 
+
+       fetch('data.json')
+       .then(function(reponse){
+        return response.json();    
+       })
+       .then(function(data)){
+        $('#btn').click(function() {
+          $('#options').show();
+          adding_Questions(data.Questions,count);
+          $('#start_page').hide();
+          $('prev').hide();
+
+          timer = setInterval(timer_function , 1000);
+            
+          function timer_function(){
+            $('#time').text(time);
+            if(timer < 1){
+              clearInterval(timer);
+              alert("out of time");
+              creating_result(data);
+              $('#main').hide();
+              $("#result").show();
+            }
+            time--;
+          }
+          
+          
+
+        });
+
+        //select option
+
+          $(".option").click(function (){
+
+            $(this).addClass("active");
+            $(this).siblings().removeClass("active");
+            answer[count] = $(this).html();
+          })
+        }
+
 
 
     })
@@ -146,9 +188,7 @@
 
     </script>
 
-    
-
-
+   
 
    </body>
 </html>

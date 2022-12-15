@@ -1,87 +1,63 @@
-*, *::before, *::after {
-     box-sizing: border-box;
-     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-:root {
-     --hue-neutral: 300;
-     --hue-wrong: 4;
-     --hue-correct: 140;
-}
-
 body {
-     --hue: var(--hue-neutral);
-     padding: 0;
-     margin: 0;
-     display: flex;
-     width: 100vw;
-     height: 100vh;
+     background: linear-gradient(to right,
+               purple 0%,
+               purple 20%,
+               gold 40%,
+               green);
+}
+
+/* .container {
+     padding: 0%;
+     margin: 0%;
+     background-color: pink;
+     box-sizing: border-box;
+     border: 5px solid, black;
      justify-content: center;
-     align-items: center;
-     background-color: hsl(var(--hue), 100%, 20%);
+     width: 50vw;
+     height: 50vh;
+     float: center;
+} */
+
+.time {
+     text-align: center;
+     margin: 1.5rem;
+     justify-content: center;
 }
 
-body.correct {
-     --hue: var(--hue-correct);
+/* .row {
+     text-size-adjust: 10%;
+     display: flex;
+     justify-content: center;
+} */
+
+.card-body {
+     text-align: center;
+     font-weight: bold;
 }
 
-body.wrong {
-     --hue: var(--hue-wrong);
-}
-
-.container {
-     width: 900px;
-     max-width: 90%;
-     background-color: gold;
-     border-radius: 5px;
-     padding: 10px;
-     box-shadow:0 0 10px 2px;
-}
-
-
-
-.btn-grid {
-     display: grid;
-     grid-template-columns: repeat(4);
-     gap: 10px;
-     margin: 20px 0;
-}
-
-.btn {
-     --hue: var(--hue-neutral);
-     border: 1px solid hsl(var(--hue), 100%, 20%);
-     background-color: hsl(var(--hue), 100%, 50%);
-     border-radius: 5px;
-     padding: 5px 10px;
-     color:black;
-     outline: none;
-}
-
-.btn:hover {
-     border-color: black;
-}
-
-.btn.correct {
-     --hue: var(--hue-correct);
+.Start_page {
      color: black;
 }
 
-.btn.wrong {
-     --hue: var(--hue-wrong);
-}
-
-.start-btn, .next-btn {
-     font-size: 1.5rem;
+#Start-btn {
+     background-color: green;
      font-weight: bold;
-     padding: 10px 20px;
 }
 
-.controls {
-     display: flex;
-     justify-content: center;
-     align-items: center;
+
+#questions {
+     box-sizing: border-box;
+     font-weight: bold;
 }
 
-.hide {
-     display: none ;
+#options {
+     text-align: left;
+}
+
+#prev {
+     float: left;
+}
+
+#next {
+     float: right;
 }
